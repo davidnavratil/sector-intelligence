@@ -276,7 +276,7 @@
                 <div class="px-4 mt-6 mb-2">
                     <span class="text-xs text-cs-muted uppercase tracking-wider">Dokumenty</span>
                 </div>
-                <a href="#" class="nav-item flex items-center gap-3 px-6 py-3 text-sm">
+                <a href="#" class="nav-item flex items-center gap-3 px-6 py-3 text-sm" onclick="showPage('documents')">
                     <span>📄</span> Reporty ke stažení
                 </a>
             </nav>
@@ -1198,6 +1198,71 @@
                                 <span>Sledujte restrukturalizaci VW dodavatelského řetězce — může ovlivnit české Tier 1/2 dodavatele.</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page: Documents -->
+            <div id="page-documents" class="page p-8 fade-in">
+                <h1 class="text-2xl font-bold text-white mb-2">Reporty ke stažení</h1>
+                <p class="text-cs-muted mb-8">Zdrojové sektorové reporty pro automobilový průmysl — Česká republika, EU a svět.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Report 1: ČR -->
+                    <div class="card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-cs-accent/20 flex items-center justify-center text-2xl">📊</div>
+                            <div>
+                                <div class="text-white font-semibold">Automobilový sektor ČR</div>
+                                <div class="text-cs-muted text-xs">451174.pdf</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-cs-muted mb-6">
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">28</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">748 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">12. 6. 2025</span></div>
+                        </div>
+                        <a href="reports/451174.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-accent/20 hover:bg-cs-accent/30 text-cs-accent rounded-lg transition text-sm font-medium">
+                            Stáhnout PDF
+                        </a>
+                    </div>
+
+                    <!-- Report 2: EU -->
+                    <div class="card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-cs-green/20 flex items-center justify-center text-2xl">🌍</div>
+                            <div>
+                                <div class="text-white font-semibold">Automobilový sektor EU</div>
+                                <div class="text-cs-muted text-xs">452191.pdf</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-cs-muted mb-6">
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">14</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">733 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">23. 6. 2025</span></div>
+                        </div>
+                        <a href="reports/452191.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-green/20 hover:bg-cs-green/30 text-cs-green rounded-lg transition text-sm font-medium">
+                            Stáhnout PDF
+                        </a>
+                    </div>
+
+                    <!-- Report 3: Svět -->
+                    <div class="card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-cs-orange/20 flex items-center justify-center text-2xl">🔧</div>
+                            <div>
+                                <div class="text-white font-semibold">Automobilový sektor Svět</div>
+                                <div class="text-cs-muted text-xs">453326.pdf</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-cs-muted mb-6">
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">22</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">943 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">2. 7. 2025</span></div>
+                        </div>
+                        <a href="reports/453326.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-orange/20 hover:bg-cs-orange/30 text-cs-orange rounded-lg transition text-sm font-medium">
+                            Stáhnout PDF
+                        </a>
                     </div>
                 </div>
             </div>

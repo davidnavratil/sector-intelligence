@@ -26,7 +26,7 @@ function showPage(pageId) {
     }
 
     const navItems = document.querySelectorAll('.nav-item');
-    const pageIndex = { dashboard: 0, data: 1, foresight: 2, supply: 3, news: 4, banking: 5 };
+    const pageIndex = { dashboard: 0, data: 1, foresight: 2, supply: 3, news: 4, banking: 5, documents: 6 };
     if (navItems[pageIndex[pageId]]) {
         navItems[pageIndex[pageId]].classList.add('active');
     }
@@ -38,6 +38,7 @@ function showPage(pageId) {
         supply: ['Supply Chain', 'Hodnotový řetězec, rizika a příležitosti'],
         news: ['News & Alerts', 'Automatizovaný monitoring trendů a událostí'],
         banking: ['Banking Implications', 'Dopad na portfolio a obchodní příležitosti ČS'],
+        documents: ['Reporty ke stažení', 'Zdrojové sektorové reporty pro automobilový průmysl'],
     };
     document.getElementById('page-title').textContent = titles[pageId]?.[0] || '';
     document.getElementById('page-subtitle').textContent = titles[pageId]?.[1] || '';
