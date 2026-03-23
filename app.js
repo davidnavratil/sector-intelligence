@@ -2,13 +2,13 @@
 // Navigation, Charts, Interactivity
 
 // Chart.js defaults
-Chart.defaults.color = '#8888aa';
-Chart.defaults.borderColor = '#2a2a4a';
+Chart.defaults.color = '#64748b';
+Chart.defaults.borderColor = '#e2e8f0';
 Chart.defaults.font.family = 'Inter';
 Chart.defaults.font.size = 11;
 Chart.defaults.plugins.legend.labels.boxWidth = 12;
 Chart.defaults.plugins.legend.labels.padding = 16;
-Chart.defaults.scale.grid = { color: 'rgba(42, 42, 74, 0.5)' };
+Chart.defaults.scale.grid = { color: 'rgba(226, 232, 240, 0.5)' };
 
 const chartInstances = {};
 
@@ -52,10 +52,10 @@ function initDashboard() {
     // Metrics table
     const tbody = document.getElementById('metrics-table');
     tbody.innerHTML = METRICS.map(m => `
-        <tr class="border-b border-cs-border/30 hover:bg-cs-accent/5 transition-colors">
+        <tr class="border-b border-cs-border/30 hover:bg-gray-50 transition-colors">
             <td class="py-3 pl-4 font-medium">${m.name}</td>
-            <td class="text-center font-semibold text-white">${m.value}</td>
-            <td class="text-center ${m.yoy.startsWith('+') ? 'text-green-400' : m.yoy.startsWith('-') ? 'text-red-400' : 'text-yellow-400'}">${m.yoy}</td>
+            <td class="text-center font-semibold text-gray-900">${m.value}</td>
+            <td class="text-center ${m.yoy.startsWith('+') ? 'text-green-600' : m.yoy.startsWith('-') ? 'text-red-600' : 'text-yellow-600'}">${m.yoy}</td>
             <td class="text-center"><span class="traffic-light tl-${m.status}"></span></td>
             <td class="text-center text-lg">${m.trend}</td>
             <td class="text-center"><span class="traffic-light tl-${m.outlook}"></span></td>
@@ -67,9 +67,9 @@ function initDashboard() {
     kpiContainer.innerHTML = KPI_CARDS.map(k => `
         <div class="metric-card ${k.color}">
             <div class="text-xs text-cs-muted mb-1">${k.title}</div>
-            <div class="text-2xl font-bold text-white">${k.value}</div>
+            <div class="text-2xl font-bold text-gray-900">${k.value}</div>
             <div class="text-xs text-cs-muted mt-1">${k.subtitle}</div>
-            <div class="text-sm ${k.change.startsWith('+') ? 'text-green-400' : k.change.startsWith('-') ? 'text-red-400' : 'text-yellow-400'} mt-2 font-semibold">${k.change} YoY</div>
+            <div class="text-sm ${k.change.startsWith('+') ? 'text-green-600' : k.change.startsWith('-') ? 'text-red-600' : 'text-yellow-600'} mt-2 font-semibold">${k.change} YoY</div>
         </div>
     `).join('');
 }
@@ -92,11 +92,11 @@ function createChart(canvasId, type, data, options = {}) {
                 position: 'top',
             },
             tooltip: {
-                backgroundColor: '#1e1e38',
-                borderColor: '#4fc3f7',
+                backgroundColor: '#ffffff',
+                borderColor: '#e2e8f0',
                 borderWidth: 1,
-                titleColor: '#fff',
-                bodyColor: '#e0e0f0',
+                titleColor: '#1e293b',
+                bodyColor: '#64748b',
                 padding: 12,
                 cornerRadius: 8,
             },
@@ -285,10 +285,10 @@ function showTrendTooltip(e, trend) {
     const typeLabel = trend.type === 'threat' ? '🔴 Hrozba' :
                       trend.type === 'opportunity' ? '🟢 Příležitost' : '🟡 Neutrální';
     tooltipEl.innerHTML = `
-        <div class="font-semibold text-white mb-1">${trend.emoji} ${trend.name}</div>
-        <div class="text-cs-muted">${typeLabel}</div>
-        <div class="text-cs-muted mt-1">Dopad: ${trend.impact}/100</div>
-        <div class="text-cs-muted">Horizont: ${trend.horizon < 33 ? 'Krátkodobý' : trend.horizon < 66 ? 'Střednědobý' : 'Dlouhodobý'}</div>
+        <div class="font-semibold text-gray-800 mb-1">${trend.emoji} ${trend.name}</div>
+        <div class="text-gray-500">${typeLabel}</div>
+        <div class="text-gray-500 mt-1">Dopad: ${trend.impact}/100</div>
+        <div class="text-gray-500">Horizont: ${trend.horizon < 33 ? 'Krátkodobý' : trend.horizon < 66 ? 'Střednědobý' : 'Dlouhodobý'}</div>
     `;
     const rect = e.target.getBoundingClientRect();
     tooltipEl.style.left = rect.right + 10 + 'px';
@@ -358,8 +358,8 @@ function initRiskHeatmap() {
                 cell.textContent = risk[2];
             } else {
                 cell.className = 'risk-cell';
-                cell.style.backgroundColor = '#1a1a2e';
-                cell.style.border = '1px solid #2a2a4a22';
+                cell.style.backgroundColor = '#f8fafc';
+                cell.style.border = '1px solid #e2e8f022';
             }
             container.appendChild(cell);
         }
@@ -395,10 +395,10 @@ function renderNews(filter) {
 
     feed.innerHTML = filtered.map(n => {
         const impactBadge = n.impact === 'high'
-            ? '<span class="bg-red-500/20 text-red-400 px-2 py-0.5 rounded text-xs font-bold">Vysoký dopad</span>'
+            ? '<span class="bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold">Vysoký dopad</span>'
             : n.impact === 'medium'
-            ? '<span class="bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded text-xs font-bold">Střední dopad</span>'
-            : '<span class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs font-bold">Nízký dopad</span>';
+            ? '<span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded text-xs font-bold">Střední dopad</span>'
+            : '<span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs font-bold">Nízký dopad</span>';
 
         const typeLabel = {
             regulatory: '⚖️ Regulatorní',
@@ -414,7 +414,7 @@ function renderNews(filter) {
                     ${impactBadge}
                     <span class="text-xs text-cs-muted ml-auto">${n.date}</span>
                 </div>
-                <h4 class="text-sm font-semibold text-white mb-1">${n.title}</h4>
+                <h4 class="text-sm font-semibold text-gray-900 mb-1">${n.title}</h4>
                 <p class="text-xs text-cs-muted">${n.summary}</p>
                 <div class="text-xs text-cs-accent mt-2">Zdroj: ${n.source}</div>
             </div>

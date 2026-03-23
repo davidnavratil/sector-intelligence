@@ -14,16 +14,16 @@
                         cs: {
                             blue: '#003366',
                             red: '#E30613',
-                            dark: '#1a1a2e',
-                            darker: '#0f0f1e',
-                            card: '#1e1e38',
-                            border: '#2a2a4a',
-                            text: '#e0e0f0',
-                            muted: '#8888aa',
-                            accent: '#4fc3f7',
-                            green: '#4caf50',
-                            yellow: '#ffc107',
-                            orange: '#ff9800',
+                            dark: '#1e293b',
+                            darker: '#f8fafc',
+                            card: '#ffffff',
+                            border: '#e2e8f0',
+                            text: '#1e293b',
+                            muted: '#64748b',
+                            accent: '#003366',
+                            green: '#16a34a',
+                            yellow: '#ca8a04',
+                            orange: '#ea580c',
                         }
                     }
                 }
@@ -34,27 +34,29 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         * { font-family: 'Inter', sans-serif; }
-        body { background: #0f0f1e; color: #e0e0f0; }
+        body { background: #f8fafc; color: #1e293b; }
 
         .nav-item { transition: all 0.2s; border-left: 3px solid transparent; }
-        .nav-item:hover { background: rgba(79, 195, 247, 0.1); border-left-color: #4fc3f7; }
-        .nav-item.active { background: rgba(79, 195, 247, 0.15); border-left-color: #4fc3f7; color: #4fc3f7; }
+        .nav-item:hover { background: rgba(0, 51, 102, 0.06); border-left-color: #003366; }
+        .nav-item.active { background: rgba(0, 51, 102, 0.1); border-left-color: #003366; color: #003366; font-weight: 600; }
 
         .card {
-            background: linear-gradient(135deg, #1e1e38 0%, #1a1a30 100%);
-            border: 1px solid #2a2a4a;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
-        .card:hover { border-color: #4fc3f7; box-shadow: 0 0 20px rgba(79, 195, 247, 0.1); }
+        .card:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 
         .metric-card {
-            background: linear-gradient(135deg, #1e1e38 0%, #1a1a30 100%);
-            border: 1px solid #2a2a4a;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 20px;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .metric-card::before {
             content: '';
@@ -63,14 +65,14 @@
             width: 4px;
             height: 100%;
         }
-        .metric-card.green::before { background: #4caf50; }
-        .metric-card.yellow::before { background: #ffc107; }
-        .metric-card.red::before { background: #f44336; }
+        .metric-card.green::before { background: #16a34a; }
+        .metric-card.yellow::before { background: #ca8a04; }
+        .metric-card.red::before { background: #dc2626; }
 
         .health-bar {
             height: 8px;
             border-radius: 4px;
-            background: #2a2a4a;
+            background: #e2e8f0;
             overflow: hidden;
         }
         .health-bar-fill {
@@ -84,32 +86,33 @@
             border-radius: 50%;
             display: inline-block;
         }
-        .tl-green { background: #4caf50; box-shadow: 0 0 8px #4caf50; }
-        .tl-yellow { background: #ffc107; box-shadow: 0 0 8px #ffc107; }
-        .tl-red { background: #f44336; box-shadow: 0 0 8px #f44336; }
+        .tl-green { background: #16a34a; box-shadow: 0 0 6px rgba(22,163,74,0.4); }
+        .tl-yellow { background: #ca8a04; box-shadow: 0 0 6px rgba(202,138,4,0.4); }
+        .tl-red { background: #dc2626; box-shadow: 0 0 6px rgba(220,38,38,0.4); }
 
         .scenario-quadrant {
-            border: 1px solid #2a2a4a;
+            border: 1px solid #e2e8f0;
             padding: 24px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
+            background: #ffffff;
         }
         .scenario-quadrant:hover {
-            background: rgba(79, 195, 247, 0.08);
-            border-color: #4fc3f7;
+            background: #f1f5f9;
+            border-color: #003366;
         }
         .scenario-quadrant.active-scenario {
-            border-color: #4fc3f7;
-            background: rgba(79, 195, 247, 0.12);
+            border-color: #003366;
+            background: rgba(0, 51, 102, 0.05);
         }
         .scenario-quadrant.active-scenario::after {
             content: 'AKTUÁLNÍ TRAJEKTORIE';
             position: absolute;
             top: 8px; right: 8px;
             font-size: 9px;
-            background: #4fc3f7;
-            color: #0f0f1e;
+            background: #003366;
+            color: #ffffff;
             padding: 2px 8px;
             border-radius: 4px;
             font-weight: 700;
@@ -129,20 +132,21 @@
         .trend-dot:hover { transform: scale(1.3); z-index: 10; }
 
         .supply-tier {
-            border: 1px solid #2a2a4a;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 16px;
             text-align: center;
             transition: all 0.3s;
+            background: #ffffff;
         }
-        .supply-tier:hover { border-color: #4fc3f7; }
+        .supply-tier:hover { border-color: #003366; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 
         .arrow-right {
             width: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4fc3f7;
+            color: #003366;
             font-size: 24px;
         }
 
@@ -168,11 +172,11 @@
             transition: all 0.2s;
             cursor: pointer;
         }
-        .news-item:hover { background: rgba(79, 195, 247, 0.05); border-left-color: #4fc3f7; }
-        .news-item.regulatory { border-left-color: #f44336; }
-        .news-item.market { border-left-color: #4caf50; }
-        .news-item.technology { border-left-color: #4fc3f7; }
-        .news-item.geopolitical { border-left-color: #ff9800; }
+        .news-item:hover { background: #f1f5f9; }
+        .news-item.regulatory { border-left-color: #dc2626; }
+        .news-item.market { border-left-color: #16a34a; }
+        .news-item.technology { border-left-color: #003366; }
+        .news-item.geopolitical { border-left-color: #ea580c; }
 
         .tab-btn {
             padding: 8px 20px;
@@ -182,11 +186,11 @@
             cursor: pointer;
             transition: all 0.2s;
             background: transparent;
-            color: #8888aa;
+            color: #64748b;
             border: 1px solid transparent;
         }
-        .tab-btn:hover { color: #e0e0f0; background: rgba(79, 195, 247, 0.1); }
-        .tab-btn.active { background: rgba(79, 195, 247, 0.2); color: #4fc3f7; border-color: #4fc3f7; }
+        .tab-btn:hover { color: #1e293b; background: #f1f5f9; }
+        .tab-btn.active { background: rgba(0, 51, 102, 0.1); color: #003366; border-color: #003366; font-weight: 600; }
 
         .page { display: none; }
         .page.active { display: block; }
@@ -201,14 +205,14 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f0f1e; }
-        ::-webkit-scrollbar-thumb { background: #2a2a4a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3a3a5a; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         .tooltip {
             position: absolute;
-            background: #1e1e38;
-            border: 1px solid #4fc3f7;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 12px 16px;
             font-size: 12px;
@@ -217,6 +221,7 @@
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .tooltip.show { opacity: 1; }
     </style>
@@ -224,14 +229,14 @@
 <body class="min-h-screen">
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-cs-darker border-r border-cs-border flex flex-col fixed h-full z-50">
+        <aside class="w-64 bg-gray-50 border-r border-cs-border flex flex-col fixed h-full z-50">
             <div class="p-6 border-b border-cs-border">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-cs-red rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold text-lg">ČS</span>
                     </div>
                     <div>
-                        <div class="font-bold text-sm text-white">Sector Intelligence</div>
+                        <div class="font-bold text-sm text-gray-900">Sector Intelligence</div>
                         <div class="text-xs text-cs-muted">Česká spořitelna</div>
                     </div>
                 </div>
@@ -240,7 +245,7 @@
             <!-- Sector selector -->
             <div class="p-4 border-b border-cs-border">
                 <label class="text-xs text-cs-muted uppercase tracking-wider mb-2 block">Odvětví</label>
-                <select class="w-full bg-cs-card border border-cs-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-cs-accent">
+                <select class="w-full bg-cs-card border border-cs-border rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-cs-accent">
                     <option>🚗 Automotive</option>
                     <option disabled>⚡ Energetika (připravujeme)</option>
                     <option disabled>💻 IT & Telco (připravujeme)</option>
@@ -283,7 +288,7 @@
 
             <div class="p-4 border-t border-cs-border">
                 <div class="text-xs text-cs-muted">Poslední aktualizace dat</div>
-                <div class="text-sm text-white mt-1">20. března 2026, 08:30</div>
+                <div class="text-sm text-gray-900 mt-1">20. března 2026, 08:30</div>
                 <div class="flex items-center gap-2 mt-2">
                     <span class="w-2 h-2 rounded-full bg-cs-green pulse"></span>
                     <span class="text-xs text-cs-green">Pipeline aktivní</span>
@@ -294,16 +299,16 @@
         <!-- Main Content -->
         <main class="flex-1 ml-64">
             <!-- Top Bar -->
-            <header class="sticky top-0 bg-cs-darker/80 backdrop-blur-lg border-b border-cs-border z-40 px-8 py-4">
+            <header class="sticky top-0 bg-white/90 backdrop-blur-lg border-b border-cs-border z-40 px-8 py-4">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h1 class="text-xl font-bold text-white" id="page-title">Executive Dashboard</h1>
+                        <h1 class="text-xl font-bold text-gray-900" id="page-title">Executive Dashboard</h1>
                         <p class="text-sm text-cs-muted" id="page-subtitle">Automotive sektor — Česká republika, EU, Svět</p>
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="flex items-center gap-2 bg-cs-card border border-cs-border rounded-lg px-4 py-2">
                             <span class="text-xs text-cs-muted">Období:</span>
-                            <select class="bg-transparent text-sm text-white focus:outline-none">
+                            <select class="bg-transparent text-sm text-gray-900 focus:outline-none">
                                 <option>Q4 2025</option>
                                 <option>Q3 2025</option>
                                 <option>Q2 2025</option>
@@ -312,7 +317,7 @@
                         </div>
                         <div class="flex items-center gap-2 bg-cs-card border border-cs-border rounded-lg px-4 py-2">
                             <span class="text-xs text-cs-muted">Geografie:</span>
-                            <select class="bg-transparent text-sm text-white focus:outline-none" id="geo-filter">
+                            <select class="bg-transparent text-sm text-gray-900 focus:outline-none" id="geo-filter">
                                 <option value="cz">Česká republika</option>
                                 <option value="eu">Evropská unie</option>
                                 <option value="world">Svět</option>
@@ -325,11 +330,11 @@
             <!-- ==================== DASHBOARD PAGE ==================== -->
             <div id="page-dashboard" class="page active p-8 fade-in">
                 <!-- Alert Banner -->
-                <div class="bg-gradient-to-r from-red-900/40 to-red-800/20 border border-red-500/30 rounded-xl p-4 mb-8 flex items-center gap-4">
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 flex items-center gap-4">
                     <span class="text-2xl">⚠️</span>
                     <div class="flex-1">
-                        <div class="font-semibold text-red-300 text-sm">Nový alert: Volkswagen oznámil restrukturalizaci dodavatelského řetězce</div>
-                        <div class="text-xs text-red-400 mt-1">Dopad na české dodavatele Tier 1/2 — potenciální snížení zakázek o 15-20 % u vybraných segmentů</div>
+                        <div class="font-semibold text-red-700 text-sm">Nový alert: Volkswagen oznámil restrukturalizaci dodavatelského řetězce</div>
+                        <div class="text-xs text-red-600 mt-1">Dopad na české dodavatele Tier 1/2 — potenciální snížení zakázek o 15-20 % u vybraných segmentů</div>
                     </div>
                     <span class="text-xs text-cs-muted">Dnes, 08:15</span>
                 </div>
@@ -338,7 +343,7 @@
                 <div class="card p-6 mb-8">
                     <div class="flex items-center justify-between mb-4">
                         <div>
-                            <h2 class="text-lg font-bold text-white">Sector Health Score</h2>
+                            <h2 class="text-lg font-bold text-gray-900">Sector Health Score</h2>
                             <p class="text-sm text-cs-muted">Agregovaný index kondice automotive sektoru ČR</p>
                         </div>
                         <div class="text-right">
@@ -359,7 +364,7 @@
 
                 <!-- Traffic Lights Table -->
                 <div class="card p-6 mb-8">
-                    <h2 class="text-lg font-bold text-white mb-6">Klíčové metriky</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-6">Klíčové metriky</h2>
                     <div class="overflow-x-auto">
                         <table class="w-full">
                             <thead>
@@ -385,35 +390,35 @@
                 <!-- Top Risks & Opportunities -->
                 <div class="grid grid-cols-2 gap-8 mb-8">
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-red-400 mb-4 flex items-center gap-2">
+                        <h3 class="text-base font-bold text-red-600 mb-4 flex items-center gap-2">
                             <span class="traffic-light tl-red"></span> Top rizika
                         </h3>
                         <div class="space-y-3">
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-red-400 mt-0.5">●</span>
+                                <span class="text-red-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Slabá poptávka v Německu</div>
+                                    <div class="font-medium text-gray-900">Slabá poptávka v Německu</div>
                                     <div class="text-cs-muted text-xs">Německý PMI manufacturing = 43.2, pokles nových objednávek 8. měsíc v řadě</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-red-400 mt-0.5">●</span>
+                                <span class="text-red-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">CO2 pokuty OEM v 2025</div>
+                                    <div class="font-medium text-gray-900">CO2 pokuty OEM v 2025</div>
                                     <div class="text-cs-muted text-xs">Odhadované pokuty 15 mld. EUR pro EU OEM při nesplnění 93.6 g/km cíle</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-red-400 mt-0.5">●</span>
+                                <span class="text-red-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Čínský import EV do EU</div>
+                                    <div class="font-medium text-gray-900">Čínský import EV do EU</div>
                                     <div class="text-cs-muted text-xs">Tržní podíl čínských značek v EU vzrostl na 8.3 % (+3.1 pp YoY)</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
                                 <span class="text-orange-400 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Ziskovost dodavatelů NACE 29.3</div>
+                                    <div class="font-medium text-gray-900">Ziskovost dodavatelů NACE 29.3</div>
                                     <div class="text-cs-muted text-xs">Agregátní EBITDA marže dodavatelů klesla na -1.2 %, 23 % firem v insolvenci/ohrožení</div>
                                 </div>
                             </div>
@@ -425,30 +430,30 @@
                         </h3>
                         <div class="space-y-3">
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-green-400 mt-0.5">●</span>
+                                <span class="text-green-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Nearshoring bateriové výroby</div>
+                                    <div class="font-medium text-gray-900">Nearshoring bateriové výroby</div>
                                     <div class="text-cs-muted text-xs">EU plánuje 40 % bateriové kapacity onshore do 2030, ČR má 3 aktivní projekty</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-green-400 mt-0.5">●</span>
+                                <span class="text-green-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Software-defined vehicles</div>
+                                    <div class="font-medium text-gray-900">Software-defined vehicles</div>
                                     <div class="text-cs-muted text-xs">Podíl SW na hodnotě vozu roste na 30 %+ do 2030, ČR má 50k+ SW vývojářů</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-green-400 mt-0.5">●</span>
+                                <span class="text-green-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Cirkulární ekonomika baterií</div>
+                                    <div class="font-medium text-gray-900">Cirkulární ekonomika baterií</div>
                                     <div class="text-cs-muted text-xs">EU Battery Regulation vytváří povinnost recyklace — nový segment 5+ mld. EUR do 2030</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 text-sm">
-                                <span class="text-green-400 mt-0.5">●</span>
+                                <span class="text-green-600 mt-0.5">●</span>
                                 <div>
-                                    <div class="font-medium text-white">Dobíjecí infrastruktura</div>
+                                    <div class="font-medium text-gray-900">Dobíjecí infrastruktura</div>
                                     <div class="text-cs-muted text-xs">AFIR požaduje 1 stanici/60 km dálnice — ČR potřebuje 3x více stanic</div>
                                 </div>
                             </div>
@@ -459,8 +464,8 @@
                 <!-- Scenario Outlook & Changes -->
                 <div class="grid grid-cols-2 gap-8">
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-white mb-3">Scénářový výhled</h3>
-                        <div class="bg-cs-darker rounded-lg p-4">
+                        <h3 class="text-base font-bold text-gray-900 mb-3">Scénářový výhled</h3>
+                        <div class="bg-gray-50 rounded-lg p-4">
                             <div class="flex items-center gap-2 mb-2">
                                 <span class="traffic-light tl-yellow"></span>
                                 <span class="text-sm font-semibold text-cs-yellow">Blíží se ke scénáři "Řízená revoluce"</span>
@@ -476,22 +481,22 @@
                         </div>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-white mb-3">Změny od posledního reportu</h3>
+                        <h3 class="text-base font-bold text-gray-900 mb-3">Změny od posledního reportu</h3>
                         <div class="space-y-3">
                             <div class="flex items-center gap-3 text-sm">
-                                <span class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs font-bold">↑</span>
+                                <span class="bg-green-100 text-green-600 px-2 py-0.5 rounded text-xs font-bold">↑</span>
                                 <span>Registrace nových EV +15 % QoQ</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm">
-                                <span class="bg-red-500/20 text-red-400 px-2 py-0.5 rounded text-xs font-bold">↓</span>
+                                <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded text-xs font-bold">↓</span>
                                 <span>Zaměstnanost NACE 29 -2.1 % YoY</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm">
-                                <span class="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded text-xs font-bold">NEW</span>
+                                <span class="bg-blue-500/20 text-blue-600 px-2 py-0.5 rounded text-xs font-bold">NEW</span>
                                 <span>VW oznámil restrukturalizaci dodavatelů</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm">
-                                <span class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-xs font-bold">↑</span>
+                                <span class="bg-green-100 text-green-600 px-2 py-0.5 rounded text-xs font-bold">↑</span>
                                 <span>Export vozidel +4.2 % YoY (táhne Škoda Enyaq)</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm">
@@ -519,24 +524,24 @@
                 <div id="data-production" class="data-section">
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Průmyslová produkce NACE 29</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Průmyslová produkce NACE 29</h3>
                             <p class="text-xs text-cs-muted mb-4">Index (2015 = 100), ČR</p>
                             <canvas id="chart-production-index" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Výroba motorových vozidel</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Výroba motorových vozidel</h3>
                             <p class="text-xs text-cs-muted mb-4">Počet vyrobených vozidel v ČR (tis. ks)</p>
                             <canvas id="chart-production-vehicles" height="220"></canvas>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Produkce podle výrobce</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Produkce podle výrobce</h3>
                             <p class="text-xs text-cs-muted mb-4">Podíl na celkové výrobě v ČR, 2024</p>
                             <canvas id="chart-production-oem" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Tržby NACE 29 subsektory</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Tržby NACE 29 subsektory</h3>
                             <p class="text-xs text-cs-muted mb-4">Mld. CZK</p>
                             <canvas id="chart-production-subsectors" height="220"></canvas>
                         </div>
@@ -547,24 +552,24 @@
                 <div id="data-registrations" class="data-section" style="display:none">
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Registrace nových osobních vozidel</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Registrace nových osobních vozidel</h3>
                             <p class="text-xs text-cs-muted mb-4">Tisíce kusů, ČR</p>
                             <canvas id="chart-reg-total" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Top 10 značek dle registrací</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Top 10 značek dle registrací</h3>
                             <p class="text-xs text-cs-muted mb-4">ČR, 2024</p>
                             <canvas id="chart-reg-brands" height="220"></canvas>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Registrace v EU podle zemí</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Registrace v EU podle zemí</h3>
                             <p class="text-xs text-cs-muted mb-4">Top 10 trhů, tisíce ks, 2024</p>
                             <canvas id="chart-reg-eu" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Globální prodeje vozidel</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Globální prodeje vozidel</h3>
                             <p class="text-xs text-cs-muted mb-4">Miliony kusů</p>
                             <canvas id="chart-reg-global" height="220"></canvas>
                         </div>
@@ -575,24 +580,24 @@
                 <div id="data-ev" class="data-section" style="display:none">
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Podíl EV na nových registracích</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Podíl EV na nových registracích</h3>
                             <p class="text-xs text-cs-muted mb-4">BEV + PHEV, % z celkových registrací</p>
                             <canvas id="chart-ev-share" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Globální prodeje EV</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Globální prodeje EV</h3>
                             <p class="text-xs text-cs-muted mb-4">Miliony kusů</p>
                             <canvas id="chart-ev-global" height="220"></canvas>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Cena bateriových packů</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Cena bateriových packů</h3>
                             <p class="text-xs text-cs-muted mb-4">USD/kWh, globální průměr</p>
                             <canvas id="chart-ev-battery" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Dobíjecí infrastruktura ČR</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Dobíjecí infrastruktura ČR</h3>
                             <p class="text-xs text-cs-muted mb-4">Počet veřejných dobíjecích bodů</p>
                             <canvas id="chart-ev-charging" height="220"></canvas>
                         </div>
@@ -603,12 +608,12 @@
                 <div id="data-trade" class="data-section" style="display:none">
                     <div class="grid grid-cols-2 gap-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Zahraniční obchod s motorovými vozidly</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Zahraniční obchod s motorovými vozidly</h3>
                             <p class="text-xs text-cs-muted mb-4">Export a import, mld. CZK</p>
                             <canvas id="chart-trade-balance" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Top exportní destinace</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Top exportní destinace</h3>
                             <p class="text-xs text-cs-muted mb-4">Podíl na exportu vozidel z ČR, 2024</p>
                             <canvas id="chart-trade-destinations" height="220"></canvas>
                         </div>
@@ -619,12 +624,12 @@
                 <div id="data-employment" class="data-section" style="display:none">
                     <div class="grid grid-cols-2 gap-6">
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Zaměstnanost v NACE 29</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Zaměstnanost v NACE 29</h3>
                             <p class="text-xs text-cs-muted mb-4">Tisíce zaměstnanců, ČR</p>
                             <canvas id="chart-emp-total" height="220"></canvas>
                         </div>
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-1">Průměrná mzda v automotive vs. průmysl</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-1">Průměrná mzda v automotive vs. průmysl</h3>
                             <p class="text-xs text-cs-muted mb-4">CZK/měsíc</p>
                             <canvas id="chart-emp-wages" height="220"></canvas>
                         </div>
@@ -634,12 +639,12 @@
                 <!-- Prices Charts -->
                 <div id="data-prices" class="data-section" style="display:none">
                     <div class="card p-6 mb-6">
-                        <h3 class="text-sm font-bold text-white mb-1">Cenové srovnání: spalovací vs. elektrické modely</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">Cenové srovnání: spalovací vs. elektrické modely</h3>
                         <p class="text-xs text-cs-muted mb-4">Pořizovací cena v tis. CZK, vybrané modely (2025)</p>
                         <canvas id="chart-prices-comparison" height="300"></canvas>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-sm font-bold text-white mb-1">TCO srovnání: 5 let, 15 000 km/rok</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">TCO srovnání: 5 let, 15 000 km/rok</h3>
                         <p class="text-xs text-cs-muted mb-4">Total Cost of Ownership v tis. CZK</p>
                         <canvas id="chart-prices-tco" height="250"></canvas>
                     </div>
@@ -652,7 +657,7 @@
                 <div class="card p-6 mb-8">
                     <div class="flex items-center justify-between mb-6">
                         <div>
-                            <h2 class="text-lg font-bold text-white">Trend Radar</h2>
+                            <h2 class="text-lg font-bold text-gray-900">Trend Radar</h2>
                             <p class="text-sm text-cs-muted">Klíčové trendy podle dopadu a časového horizontu</p>
                         </div>
                         <div class="flex gap-4 text-xs">
@@ -661,7 +666,7 @@
                             <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-yellow-500"></span> Neutrální</span>
                         </div>
                     </div>
-                    <div class="relative bg-cs-darker rounded-xl" style="height: 420px;" id="trend-radar">
+                    <div class="relative bg-gray-50 rounded-xl" style="height: 420px;" id="trend-radar">
                         <!-- Axes -->
                         <div class="absolute left-0 right-0 top-1/2 h-px bg-cs-border"></div>
                         <div class="absolute top-0 bottom-0 left-1/2 w-px bg-cs-border"></div>
@@ -678,7 +683,7 @@
                 <div class="card p-6 mb-8">
                     <div class="flex items-center justify-between mb-6">
                         <div>
-                            <h2 class="text-lg font-bold text-white">Scénářová matice</h2>
+                            <h2 class="text-lg font-bold text-gray-900">Scénářová matice</h2>
                             <p class="text-sm text-cs-muted">2x2 scénáře pro automotive sektor</p>
                         </div>
                     </div>
@@ -692,7 +697,7 @@
                         </div>
                         <div class="grid grid-cols-2 gap-0 flex-1">
                             <div class="scenario-quadrant active-scenario rounded-tl-xl" onclick="showScenario(0)">
-                                <h4 class="text-sm font-bold text-yellow-400 mb-2">Řízená revoluce</h4>
+                                <h4 class="text-sm font-bold text-yellow-600 mb-2">Řízená revoluce</h4>
                                 <p class="text-xs text-cs-muted mb-3">Pomalá technologie + přísná regulace</p>
                                 <ul class="text-xs text-cs-text space-y-1">
                                     <li>• Nákladný přechod na EV</li>
@@ -702,7 +707,7 @@
                                 </ul>
                             </div>
                             <div class="scenario-quadrant rounded-tr-xl" onclick="showScenario(1)">
-                                <h4 class="text-sm font-bold text-green-400 mb-2">Zelený sprint</h4>
+                                <h4 class="text-sm font-bold text-green-600 mb-2">Zelený sprint</h4>
                                 <p class="text-xs text-cs-muted mb-3">Rychlá technologie + přísná regulace</p>
                                 <ul class="text-xs text-cs-text space-y-1">
                                     <li>• Rychlá transformace sektoru</li>
@@ -712,7 +717,7 @@
                                 </ul>
                             </div>
                             <div class="scenario-quadrant rounded-bl-xl" onclick="showScenario(2)">
-                                <h4 class="text-sm font-bold text-gray-400 mb-2">Status quo+</h4>
+                                <h4 class="text-sm font-bold text-gray-500 mb-2">Status quo+</h4>
                                 <p class="text-xs text-cs-muted mb-3">Pomalá technologie + volná regulace</p>
                                 <ul class="text-xs text-cs-text space-y-1">
                                     <li>• Pomalý přechod, hybridní mix</li>
@@ -722,7 +727,7 @@
                                 </ul>
                             </div>
                             <div class="scenario-quadrant rounded-br-xl" onclick="showScenario(3)">
-                                <h4 class="text-sm font-bold text-blue-400 mb-2">Tržní evoluce</h4>
+                                <h4 class="text-sm font-bold text-blue-600 mb-2">Tržní evoluce</h4>
                                 <p class="text-xs text-cs-muted mb-3">Rychlá technologie + volná regulace</p>
                                 <ul class="text-xs text-cs-text space-y-1">
                                     <li>• Disrupce zdola (čínské značky)</li>
@@ -737,7 +742,7 @@
 
                 <!-- Scenario Detail -->
                 <div class="card p-6 mb-8" id="scenario-detail">
-                    <h3 class="text-base font-bold text-yellow-400 mb-4" id="scenario-detail-title">Scénář: Řízená revoluce — Detail</h3>
+                    <h3 class="text-base font-bold text-yellow-600 mb-4" id="scenario-detail-title">Scénář: Řízená revoluce — Detail</h3>
                     <div class="grid grid-cols-3 gap-6">
                         <div>
                             <h4 class="text-xs text-cs-muted uppercase tracking-wider mb-3">Dopad na ČR</h4>
@@ -770,12 +775,12 @@
                 <!-- Predictions Chart -->
                 <div class="grid grid-cols-2 gap-6">
                     <div class="card p-6">
-                        <h3 class="text-sm font-bold text-white mb-1">Predikce: Výroba vozidel v ČR</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">Predikce: Výroba vozidel v ČR</h3>
                         <p class="text-xs text-cs-muted mb-4">Prophet model, tis. ks, s konfidenčním intervalem</p>
                         <canvas id="chart-forecast-production" height="220"></canvas>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-sm font-bold text-white mb-1">Predikce: Podíl EV na registracích ČR</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">Predikce: Podíl EV na registracích ČR</h3>
                         <p class="text-xs text-cs-muted mb-4">Bass diffusion model, % z nových registrací</p>
                         <canvas id="chart-forecast-ev" height="220"></canvas>
                     </div>
@@ -786,18 +791,18 @@
             <div id="page-supply" class="page p-8 fade-in">
                 <!-- Value Chain Visualization -->
                 <div class="card p-6 mb-8">
-                    <h2 class="text-lg font-bold text-white mb-2">Hodnotový řetězec — Automotive</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-2">Hodnotový řetězec — Automotive</h2>
                     <p class="text-sm text-cs-muted mb-6">Klikněte na úroveň pro detail</p>
 
                     <div class="flex items-stretch gap-2 mb-6">
                         <div class="supply-tier flex-1 cursor-pointer hover:bg-cs-accent/10" onclick="showTierDetail('raw')">
                             <div class="text-xs text-cs-muted mb-2">Tier 3+ Suroviny</div>
                             <div class="space-y-1 text-xs">
-                                <div class="bg-red-500/20 text-red-300 rounded px-2 py-1">Lithium 🇨🇱🇦🇺</div>
-                                <div class="bg-red-500/20 text-red-300 rounded px-2 py-1">Kobalt 🇨🇩</div>
+                                <div class="bg-red-100 text-red-700 rounded px-2 py-1">Lithium 🇨🇱🇦🇺</div>
+                                <div class="bg-red-100 text-red-700 rounded px-2 py-1">Kobalt 🇨🇩</div>
                                 <div class="bg-orange-500/20 text-orange-300 rounded px-2 py-1">Nikl 🇮🇩🇷🇺</div>
-                                <div class="bg-yellow-500/20 text-yellow-300 rounded px-2 py-1">Ocel 🇨🇳🇪🇺</div>
-                                <div class="bg-red-500/20 text-red-300 rounded px-2 py-1">Vzácné zeminy 🇨🇳</div>
+                                <div class="bg-yellow-100 text-yellow-800 rounded px-2 py-1">Ocel 🇨🇳🇪🇺</div>
+                                <div class="bg-red-100 text-red-700 rounded px-2 py-1">Vzácné zeminy 🇨🇳</div>
                                 <div class="bg-orange-500/20 text-orange-300 rounded px-2 py-1">Semiconductory 🇹🇼🇰🇷</div>
                             </div>
                         </div>
@@ -806,22 +811,22 @@
                             <div class="text-xs text-cs-muted mb-2">Tier 2 Komponenty</div>
                             <div class="space-y-1 text-xs">
                                 <div class="bg-blue-500/20 text-blue-300 rounded px-2 py-1">Bateriové články</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1">Odlitky, výlisky</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1">Odlitky, výlisky</div>
                                 <div class="bg-blue-500/20 text-blue-300 rounded px-2 py-1">Elektromotory</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1">Kabelové svazky</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1">Kabelové svazky</div>
                                 <div class="bg-blue-500/20 text-blue-300 rounded px-2 py-1">PCB, senzory</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1">Plastové díly</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1">Plastové díly</div>
                             </div>
                         </div>
                         <div class="arrow-right">→</div>
                         <div class="supply-tier flex-1 cursor-pointer hover:bg-cs-accent/10" onclick="showTierDetail('t1')">
                             <div class="text-xs text-cs-muted mb-2">Tier 1 Systémy</div>
                             <div class="space-y-1 text-xs">
-                                <div class="bg-yellow-500/20 text-yellow-300 rounded px-2 py-1">Bateriové packy</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1">Podvozkové díly</div>
-                                <div class="bg-yellow-500/20 text-yellow-300 rounded px-2 py-1">Pohonné systémy</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1">Interiérové systémy</div>
-                                <div class="bg-yellow-500/20 text-yellow-300 rounded px-2 py-1">Řídící jednotky (ECU)</div>
+                                <div class="bg-yellow-100 text-yellow-800 rounded px-2 py-1">Bateriové packy</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1">Podvozkové díly</div>
+                                <div class="bg-yellow-100 text-yellow-800 rounded px-2 py-1">Pohonné systémy</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1">Interiérové systémy</div>
+                                <div class="bg-yellow-100 text-yellow-800 rounded px-2 py-1">Řídící jednotky (ECU)</div>
                                 <div class="bg-blue-500/20 text-blue-300 rounded px-2 py-1">ADAS / senzory</div>
                             </div>
                         </div>
@@ -829,14 +834,14 @@
                         <div class="supply-tier flex-1 cursor-pointer hover:bg-cs-accent/10" onclick="showTierDetail('oem')">
                             <div class="text-xs text-cs-muted mb-2">OEM Výrobci v ČR</div>
                             <div class="space-y-1 text-xs">
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1 font-semibold">Škoda Auto (Mladá Boleslav)</div>
-                                <div class="bg-green-500/20 text-green-300 rounded px-2 py-1 font-semibold">Hyundai (Nošovice)</div>
-                                <div class="bg-yellow-500/20 text-yellow-300 rounded px-2 py-1 font-semibold">TPCA/Toyota (Kolín)</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1 font-semibold">Škoda Auto (Mladá Boleslav)</div>
+                                <div class="bg-green-100 text-green-700 rounded px-2 py-1 font-semibold">Hyundai (Nošovice)</div>
+                                <div class="bg-yellow-100 text-yellow-800 rounded px-2 py-1 font-semibold">TPCA/Toyota (Kolín)</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-cs-darker rounded-lg p-4 text-xs text-cs-muted">
+                    <div class="bg-gray-50 rounded-lg p-4 text-xs text-cs-muted">
                         <strong class="text-cs-accent">Legenda barev:</strong>
                         <span class="text-green-300">🟢 Silná pozice ČR</span> |
                         <span class="text-yellow-300">🟡 Střední / rozvíjející se</span> |
@@ -847,7 +852,7 @@
 
                 <!-- Supply Chain Risk Heatmap -->
                 <div class="card p-6 mb-8">
-                    <h2 class="text-lg font-bold text-white mb-2">Risk Heatmap — Dodavatelský řetězec</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-2">Risk Heatmap — Dodavatelský řetězec</h2>
                     <p class="text-sm text-cs-muted mb-6">Pravděpodobnost disruption × Dopad na ČR automotive</p>
 
                     <div class="grid grid-cols-6 gap-2" id="risk-heatmap">
@@ -865,7 +870,7 @@
 
                 <!-- Supplier Financial Health -->
                 <div class="card p-6 mb-8">
-                    <h2 class="text-lg font-bold text-white mb-2">Finanční zdraví — Top dodavatelé NACE 29</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-2">Finanční zdraví — Top dodavatelé NACE 29</h2>
                     <p class="text-sm text-cs-muted mb-6">Na základě účetních závěrek, Justice.cz</p>
 
                     <div class="grid grid-cols-2 gap-6">
@@ -886,19 +891,19 @@
                                     <tr class="border-b border-cs-border/30">
                                         <td class="py-3">NACE 29.1 — Motorová vozidla</td>
                                         <td class="text-center">812</td>
-                                        <td class="text-center text-green-400">8.2 %</td>
+                                        <td class="text-center text-green-600">8.2 %</td>
                                         <td class="text-center"><span class="traffic-light tl-green"></span></td>
                                     </tr>
                                     <tr class="border-b border-cs-border/30">
                                         <td class="py-3">NACE 29.2 — Karoserie</td>
                                         <td class="text-center">45</td>
-                                        <td class="text-center text-yellow-400">3.1 %</td>
+                                        <td class="text-center text-yellow-600">3.1 %</td>
                                         <td class="text-center"><span class="traffic-light tl-yellow"></span></td>
                                     </tr>
                                     <tr class="border-b border-cs-border/30">
                                         <td class="py-3">NACE 29.3 — Díly a příslušenství</td>
                                         <td class="text-center">298</td>
-                                        <td class="text-center text-red-400">-1.2 %</td>
+                                        <td class="text-center text-red-600">-1.2 %</td>
                                         <td class="text-center"><span class="traffic-light tl-red"></span></td>
                                     </tr>
                                     <tr>
@@ -916,60 +921,60 @@
                 <!-- Opportunities & Threats -->
                 <div class="grid grid-cols-2 gap-6">
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-green-400 mb-4">Příležitosti v hodnotovém řetězci</h3>
+                        <h3 class="text-base font-bold text-green-600 mb-4">Příležitosti v hodnotovém řetězci</h3>
                         <div class="space-y-4">
-                            <div class="bg-green-500/10 rounded-lg p-4">
+                            <div class="bg-green-50 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-green-400 font-bold text-sm">01</span>
-                                    <span class="font-semibold text-sm text-white">Nearshoring baterií</span>
+                                    <span class="text-green-600 font-bold text-sm">01</span>
+                                    <span class="font-semibold text-sm text-gray-900">Nearshoring baterií</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">EU cílí 40 % bateriové kapacity onshore. ČR má 3 aktivní projekty investičních pobídek.</p>
-                                <div class="mt-2 text-xs text-green-400">Potenciál: 50-100 mld. CZK investic</div>
+                                <div class="mt-2 text-xs text-green-600">Potenciál: 50-100 mld. CZK investic</div>
                             </div>
-                            <div class="bg-green-500/10 rounded-lg p-4">
+                            <div class="bg-green-50 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-green-400 font-bold text-sm">02</span>
-                                    <span class="font-semibold text-sm text-white">Software & ADAS</span>
+                                    <span class="text-green-600 font-bold text-sm">02</span>
+                                    <span class="font-semibold text-sm text-gray-900">Software & ADAS</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">Podíl SW na hodnotě vozu roste z 10 % na 30 %+. ČR má 50k+ SW vývojářů.</p>
-                                <div class="mt-2 text-xs text-green-400">Potenciál: Nové R&D centra</div>
+                                <div class="mt-2 text-xs text-green-600">Potenciál: Nové R&D centra</div>
                             </div>
-                            <div class="bg-green-500/10 rounded-lg p-4">
+                            <div class="bg-green-50 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-green-400 font-bold text-sm">03</span>
-                                    <span class="font-semibold text-sm text-white">Recyklace baterií</span>
+                                    <span class="text-green-600 font-bold text-sm">03</span>
+                                    <span class="font-semibold text-sm text-gray-900">Recyklace baterií</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">EU Battery Regulation vytváří povinnost recyklace. Nový segment trhu.</p>
-                                <div class="mt-2 text-xs text-green-400">Potenciál: 5+ mld. EUR trh do 2030</div>
+                                <div class="mt-2 text-xs text-green-600">Potenciál: 5+ mld. EUR trh do 2030</div>
                             </div>
                         </div>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-red-400 mb-4">Hrozby v hodnotovém řetězci</h3>
+                        <h3 class="text-base font-bold text-red-600 mb-4">Hrozby v hodnotovém řetězci</h3>
                         <div class="space-y-4">
                             <div class="bg-red-500/10 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-red-400 font-bold text-sm">01</span>
-                                    <span class="font-semibold text-sm text-white">Stranded assets (ICE)</span>
+                                    <span class="text-red-600 font-bold text-sm">01</span>
+                                    <span class="font-semibold text-sm text-gray-900">Stranded assets (ICE)</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">~40 % českých dodavatelů vyrábí výhradně ICE komponenty bez diverzifikace.</p>
-                                <div class="mt-2 text-xs text-red-400">Ohroženo: ~35 000 pracovních míst</div>
+                                <div class="mt-2 text-xs text-red-600">Ohroženo: ~35 000 pracovních míst</div>
                             </div>
                             <div class="bg-red-500/10 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-red-400 font-bold text-sm">02</span>
-                                    <span class="font-semibold text-sm text-white">Čínská konkurence</span>
+                                    <span class="text-red-600 font-bold text-sm">02</span>
+                                    <span class="font-semibold text-sm text-gray-900">Čínská konkurence</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">Čínské EV komponenty o 20-40 % levnější. I přes cla stále cenově konkurenceschopné.</p>
-                                <div class="mt-2 text-xs text-red-400">Tlak na marže dodavatelů</div>
+                                <div class="mt-2 text-xs text-red-600">Tlak na marže dodavatelů</div>
                             </div>
                             <div class="bg-red-500/10 rounded-lg p-4">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-red-400 font-bold text-sm">03</span>
-                                    <span class="font-semibold text-sm text-white">Přesun výroby OEM</span>
+                                    <span class="text-red-600 font-bold text-sm">03</span>
+                                    <span class="font-semibold text-sm text-gray-900">Přesun výroby OEM</span>
                                 </div>
                                 <p class="text-xs text-cs-muted">OEM mohou přesunout montáž blíže k bateriím (Německo, Maďarsko). ČR bez gigafactory.</p>
-                                <div class="mt-2 text-xs text-red-400">Riziko: ztráta montážní kapacity</div>
+                                <div class="mt-2 text-xs text-red-600">Riziko: ztráta montážní kapacity</div>
                             </div>
                         </div>
                     </div>
@@ -995,40 +1000,40 @@
                     </div>
                     <div>
                         <div class="card p-6 mb-6">
-                            <h3 class="text-sm font-bold text-white mb-4">Regulatory Tracker</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-4">Regulatory Tracker</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-red-500"></span>
                                     <div class="text-xs">
-                                        <div class="text-white">CO2 limity 2025</div>
+                                        <div class="text-gray-900">CO2 limity 2025</div>
                                         <div class="text-cs-muted">93.6 g/km — Aktivní</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
                                     <div class="text-xs">
-                                        <div class="text-white">Euro 7</div>
+                                        <div class="text-gray-900">Euro 7</div>
                                         <div class="text-cs-muted">Schváleno — Účinnost 2027</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
                                     <div class="text-xs">
-                                        <div class="text-white">CBAM rozšíření</div>
+                                        <div class="text-gray-900">CBAM rozšíření</div>
                                         <div class="text-cs-muted">Návrh — Automotive TBD</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-green-500"></span>
                                     <div class="text-xs">
-                                        <div class="text-white">EU Battery Regulation</div>
+                                        <div class="text-gray-900">EU Battery Regulation</div>
                                         <div class="text-cs-muted">Účinnost 2027 — Recyklace</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-orange-500"></span>
                                     <div class="text-xs">
-                                        <div class="text-white">AFIR infrastruktura</div>
+                                        <div class="text-gray-900">AFIR infrastruktura</div>
                                         <div class="text-cs-muted">1 stanice/60 km — Termín 2026</div>
                                     </div>
                                 </div>
@@ -1036,31 +1041,31 @@
                         </div>
 
                         <div class="card p-6 mb-6">
-                            <h3 class="text-sm font-bold text-white mb-4">Sentiment Index</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-4">Sentiment Index</h3>
                             <div class="text-center mb-4">
-                                <div class="text-3xl font-bold text-yellow-400">52</div>
+                                <div class="text-3xl font-bold text-yellow-600">52</div>
                                 <div class="text-xs text-cs-muted">z 100 (neutrální)</div>
                             </div>
                             <canvas id="chart-sentiment" height="120"></canvas>
                         </div>
 
                         <div class="card p-6">
-                            <h3 class="text-sm font-bold text-white mb-4">Deal Tracker</h3>
+                            <h3 class="text-sm font-bold text-gray-900 mb-4">Deal Tracker</h3>
                             <div class="space-y-3 text-xs">
                                 <div class="border-l-2 border-blue-400 pl-3">
-                                    <div class="text-white font-medium">VW investice do SW divize</div>
+                                    <div class="text-gray-900 font-medium">VW investice do SW divize</div>
                                     <div class="text-cs-muted">€2.4 mld. — leden 2026</div>
                                 </div>
                                 <div class="border-l-2 border-red-400 pl-3">
-                                    <div class="text-white font-medium">Magna uzavření závodu CZ</div>
+                                    <div class="text-gray-900 font-medium">Magna uzavření závodu CZ</div>
                                     <div class="text-cs-muted">Liberec, 800 míst — únor 2026</div>
                                 </div>
                                 <div class="border-l-2 border-green-400 pl-3">
-                                    <div class="text-white font-medium">CATL gigafactory HU</div>
+                                    <div class="text-gray-900 font-medium">CATL gigafactory HU</div>
                                     <div class="text-cs-muted">100 GWh, €7.3 mld. — Q4 2025</div>
                                 </div>
                                 <div class="border-l-2 border-green-400 pl-3">
-                                    <div class="text-white font-medium">Škoda Enyaq facelift</div>
+                                    <div class="text-gray-900 font-medium">Škoda Enyaq facelift</div>
                                     <div class="text-cs-muted">Start výroby Q2 2026</div>
                                 </div>
                             </div>
@@ -1074,36 +1079,36 @@
                 <div class="grid grid-cols-3 gap-6 mb-8">
                     <div class="metric-card green">
                         <div class="text-xs text-cs-muted mb-1">Portfolio exposure — Automotive</div>
-                        <div class="text-2xl font-bold text-white">42.8 mld. CZK</div>
+                        <div class="text-2xl font-bold text-gray-900">42.8 mld. CZK</div>
                         <div class="text-sm text-cs-green mt-1">12.3 % celkového corp. portfolia</div>
                     </div>
                     <div class="metric-card yellow">
                         <div class="text-xs text-cs-muted mb-1">NPL ratio — Automotive</div>
-                        <div class="text-2xl font-bold text-white">3.8 %</div>
-                        <div class="text-sm text-yellow-400 mt-1">↑ z 2.9 % (Q3 2025)</div>
+                        <div class="text-2xl font-bold text-gray-900">3.8 %</div>
+                        <div class="text-sm text-yellow-600 mt-1">↑ z 2.9 % (Q3 2025)</div>
                     </div>
                     <div class="metric-card green">
                         <div class="text-xs text-cs-muted mb-1">Nové úvěry — Automotive (YTD)</div>
-                        <div class="text-2xl font-bold text-white">6.2 mld. CZK</div>
+                        <div class="text-2xl font-bold text-gray-900">6.2 mld. CZK</div>
                         <div class="text-sm text-cs-green mt-1">↑ +8 % YoY</div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div class="card p-6">
-                        <h3 class="text-sm font-bold text-white mb-1">Rozložení portfolia podle NACE</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">Rozložení portfolia podle NACE</h3>
                         <p class="text-xs text-cs-muted mb-4">Mld. CZK</p>
                         <canvas id="chart-banking-portfolio" height="220"></canvas>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-sm font-bold text-white mb-1">Dopad scénářů na portfolio</h3>
+                        <h3 class="text-sm font-bold text-gray-900 mb-1">Dopad scénářů na portfolio</h3>
                         <p class="text-xs text-cs-muted mb-4">Odhadovaný nárůst NPL ratia</p>
                         <canvas id="chart-banking-scenarios" height="220"></canvas>
                     </div>
                 </div>
 
                 <div class="card p-6 mb-8">
-                    <h3 class="text-base font-bold text-white mb-4">Top klienti s nejvyšší expozicí</h3>
+                    <h3 class="text-base font-bold text-gray-900 mb-4">Top klienti s nejvyšší expozicí</h3>
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="text-xs text-cs-muted uppercase border-b border-cs-border">
@@ -1122,7 +1127,7 @@
                                 <td class="text-center">2 450</td>
                                 <td class="text-center">BBB</td>
                                 <td class="text-center"><span class="traffic-light tl-green"></span></td>
-                                <td class="text-center"><span class="text-green-400 text-xs font-medium">Nízké</span></td>
+                                <td class="text-center"><span class="text-green-600 text-xs font-medium">Nízké</span></td>
                             </tr>
                             <tr class="border-b border-cs-border/30">
                                 <td class="py-3 font-medium">Dodavatel B (Tier 2)</td>
@@ -1130,7 +1135,7 @@
                                 <td class="text-center">1 820</td>
                                 <td class="text-center">BB+</td>
                                 <td class="text-center"><span class="traffic-light tl-yellow"></span></td>
-                                <td class="text-center"><span class="text-yellow-400 text-xs font-medium">Střední</span></td>
+                                <td class="text-center"><span class="text-yellow-600 text-xs font-medium">Střední</span></td>
                             </tr>
                             <tr class="border-b border-cs-border/30">
                                 <td class="py-3 font-medium">Dodavatel C (ICE only)</td>
@@ -1138,7 +1143,7 @@
                                 <td class="text-center">980</td>
                                 <td class="text-center">BB-</td>
                                 <td class="text-center"><span class="traffic-light tl-red"></span></td>
-                                <td class="text-center"><span class="text-red-400 text-xs font-medium">Vysoké</span></td>
+                                <td class="text-center"><span class="text-red-600 text-xs font-medium">Vysoké</span></td>
                             </tr>
                             <tr class="border-b border-cs-border/30">
                                 <td class="py-3 font-medium">Fleet leasing D</td>
@@ -1146,7 +1151,7 @@
                                 <td class="text-center">3 200</td>
                                 <td class="text-center">A-</td>
                                 <td class="text-center"><span class="traffic-light tl-green"></span></td>
-                                <td class="text-center"><span class="text-green-400 text-xs font-medium">Nízké</span></td>
+                                <td class="text-center"><span class="text-green-600 text-xs font-medium">Nízké</span></td>
                             </tr>
                             <tr>
                                 <td class="py-3 font-medium">Dealer E (síť)</td>
@@ -1154,7 +1159,7 @@
                                 <td class="text-center">560</td>
                                 <td class="text-center">BBB-</td>
                                 <td class="text-center"><span class="traffic-light tl-yellow"></span></td>
-                                <td class="text-center"><span class="text-yellow-400 text-xs font-medium">Střední</span></td>
+                                <td class="text-center"><span class="text-yellow-600 text-xs font-medium">Střední</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1162,36 +1167,36 @@
 
                 <div class="grid grid-cols-2 gap-6">
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-white mb-4">Obchodní příležitosti</h3>
+                        <h3 class="text-base font-bold text-gray-900 mb-4">Obchodní příležitosti</h3>
                         <div class="space-y-3">
-                            <div class="bg-green-500/10 rounded-lg p-3 text-sm">
-                                <div class="font-medium text-green-400">Financování EV přechodu</div>
+                            <div class="bg-green-50 rounded-lg p-3 text-sm">
+                                <div class="font-medium text-green-600">Financování EV přechodu</div>
                                 <div class="text-xs text-cs-muted mt-1">Dodavatelé potřebují investiční úvěry na konverzi výrobních linek. Odhadovaný potenciál: 5-10 mld. CZK.</div>
                             </div>
-                            <div class="bg-green-500/10 rounded-lg p-3 text-sm">
-                                <div class="font-medium text-green-400">Leasing EV flotil</div>
+                            <div class="bg-green-50 rounded-lg p-3 text-sm">
+                                <div class="font-medium text-green-600">Leasing EV flotil</div>
                                 <div class="text-xs text-cs-muted mt-1">Rostoucí poptávka po operativním leasingu EV. Fleet podíl EV roste na 15 %+.</div>
                             </div>
-                            <div class="bg-green-500/10 rounded-lg p-3 text-sm">
-                                <div class="font-medium text-green-400">Dobíjecí infrastruktura</div>
+                            <div class="bg-green-50 rounded-lg p-3 text-sm">
+                                <div class="font-medium text-green-600">Dobíjecí infrastruktura</div>
                                 <div class="text-xs text-cs-muted mt-1">Financování výstavby nabíjecích sítí. AFIR deadline vytváří urgentní poptávku.</div>
                             </div>
                         </div>
                     </div>
                     <div class="card p-6">
-                        <h3 class="text-base font-bold text-white mb-4">Talking points pro RM</h3>
+                        <h3 class="text-base font-bold text-gray-900 mb-4">Talking points pro RM</h3>
                         <div class="space-y-3 text-sm">
                             <div class="flex gap-3">
                                 <span class="text-cs-accent">1.</span>
-                                <span>Sektoru jako celku se daří stabilně, ale <strong class="text-yellow-400">dodavatelé NACE 29.3 jsou pod tlakem</strong>. Ptejte se klientů na jejich EV strategii.</span>
+                                <span>Sektoru jako celku se daří stabilně, ale <strong class="text-yellow-600">dodavatelé NACE 29.3 jsou pod tlakem</strong>. Ptejte se klientů na jejich EV strategii.</span>
                             </div>
                             <div class="flex gap-3">
                                 <span class="text-cs-accent">2.</span>
-                                <span>Nová <strong class="text-red-400">CO2 regulace 2025</strong> vytváří tlak na OEM — může se přelít na dodavatele formou nižších cen.</span>
+                                <span>Nová <strong class="text-red-600">CO2 regulace 2025</strong> vytváří tlak na OEM — může se přelít na dodavatele formou nižších cen.</span>
                             </div>
                             <div class="flex gap-3">
                                 <span class="text-cs-accent">3.</span>
-                                <span><strong class="text-green-400">Nearshoring baterií</strong> je příležitost — nabídněte investiční financování firmám expandujícím do EV komponent.</span>
+                                <span><strong class="text-green-600">Nearshoring baterií</strong> je příležitost — nabídněte investiční financování firmám expandujícím do EV komponent.</span>
                             </div>
                             <div class="flex gap-3">
                                 <span class="text-cs-accent">4.</span>
@@ -1204,7 +1209,7 @@
 
             <!-- Page: Documents -->
             <div id="page-documents" class="page p-8 fade-in">
-                <h1 class="text-2xl font-bold text-white mb-2">Reporty ke stažení</h1>
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">Reporty ke stažení</h1>
                 <p class="text-cs-muted mb-8">Zdrojové sektorové reporty pro automobilový průmysl — Česká republika, EU a svět.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1213,14 +1218,14 @@
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 rounded-lg bg-cs-accent/20 flex items-center justify-center text-2xl">📊</div>
                             <div>
-                                <div class="text-white font-semibold">Automobilový sektor ČR</div>
+                                <div class="text-gray-900 font-semibold">Automobilový sektor ČR</div>
                                 <div class="text-cs-muted text-xs">451174.pdf</div>
                             </div>
                         </div>
                         <div class="space-y-2 text-sm text-cs-muted mb-6">
-                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">28</span></div>
-                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">748 KB</span></div>
-                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">12. 6. 2025</span></div>
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-gray-900">28</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-gray-900">748 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-gray-900">12. 6. 2025</span></div>
                         </div>
                         <a href="reports/451174.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-accent/20 hover:bg-cs-accent/30 text-cs-accent rounded-lg transition text-sm font-medium">
                             Stáhnout PDF
@@ -1232,14 +1237,14 @@
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 rounded-lg bg-cs-green/20 flex items-center justify-center text-2xl">🌍</div>
                             <div>
-                                <div class="text-white font-semibold">Automobilový sektor EU</div>
+                                <div class="text-gray-900 font-semibold">Automobilový sektor EU</div>
                                 <div class="text-cs-muted text-xs">452191.pdf</div>
                             </div>
                         </div>
                         <div class="space-y-2 text-sm text-cs-muted mb-6">
-                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">14</span></div>
-                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">733 KB</span></div>
-                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">23. 6. 2025</span></div>
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-gray-900">14</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-gray-900">733 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-gray-900">23. 6. 2025</span></div>
                         </div>
                         <a href="reports/452191.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-green/20 hover:bg-cs-green/30 text-cs-green rounded-lg transition text-sm font-medium">
                             Stáhnout PDF
@@ -1251,14 +1256,14 @@
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 rounded-lg bg-cs-orange/20 flex items-center justify-center text-2xl">🔧</div>
                             <div>
-                                <div class="text-white font-semibold">Automobilový sektor Svět</div>
+                                <div class="text-gray-900 font-semibold">Automobilový sektor Svět</div>
                                 <div class="text-cs-muted text-xs">453326.pdf</div>
                             </div>
                         </div>
                         <div class="space-y-2 text-sm text-cs-muted mb-6">
-                            <div class="flex justify-between"><span>Počet stran</span><span class="text-white">22</span></div>
-                            <div class="flex justify-between"><span>Velikost</span><span class="text-white">943 KB</span></div>
-                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-white">2. 7. 2025</span></div>
+                            <div class="flex justify-between"><span>Počet stran</span><span class="text-gray-900">22</span></div>
+                            <div class="flex justify-between"><span>Velikost</span><span class="text-gray-900">943 KB</span></div>
+                            <div class="flex justify-between"><span>Vytvořeno</span><span class="text-gray-900">2. 7. 2025</span></div>
                         </div>
                         <a href="reports/453326.pdf" download class="block w-full text-center py-2.5 px-4 bg-cs-orange/20 hover:bg-cs-orange/30 text-cs-orange rounded-lg transition text-sm font-medium">
                             Stáhnout PDF
